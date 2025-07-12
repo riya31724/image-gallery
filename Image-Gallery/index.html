@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+  <h1>My Image Gallery</h1>
+
+    <div class="theme-toggle">
+  <label class="switch">
+    <input type="checkbox" id="themeCheckbox">
+    <span class="slider round"></span>
+  </label>
+  <span class="theme-label">Dark Mode</span>
+</div>
+
+
+  <div class="filters">
+    <button onclick="filterImages('all')">All</button>
+    <button onclick="filterImages('nature')">Nature</button> 
+    <button onclick="filterImages('people')">People</button>
+    <button onclick="filterImages('animal')">Animals</button>
+  </div>
+
+  <div class="gallery">
+    <!-- Nature Images -->
+    <img src="https://picsum.photos/id/1011/300" alt="Image 1" class="nature">
+    <img src="https://picsum.photos/id/1015/300" alt="Image 2" class="nature">
+    <img src="https://picsum.photos/id/1025/300" alt="Image 3" class="nature">
+    <img src="https://picsum.photos/id/1035/300" alt="Image 4" class="nature">
+    <img src="https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=800" alt="Sunset" class="nature">
+    <img src="https://images.unsplash.com/photo-1605460375648-278bcbd579a6?auto=format&fit=crop&w=800" alt="Forest Image" class="nature">
+    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800" alt="Mountains" class="nature">
+    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800" alt="Desert" class="nature">
+    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800" alt="Ocean" class="nature">
+    <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=800" alt="Forest" class="nature">
+
+    <!-- Animal Images -->
+    <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=800" alt="Cute Puppy" class="animal">
+    <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=800" alt="Kitten" class="animal">
+
+    <!-- People Images -->
+    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=300&q=80" alt="Person 1" class="people">
+    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" alt="Person 2" class="people">
+    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80" alt="Person 3" class="people">
+    <img src="https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?auto=format&fit=crop&w=300&q=80" alt="Person 4" class="people">
+  </div>
+
+  <!-- ✅ Single Lightbox -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close" onclick="event.stopPropagation(); closeLightbox()">×</span>
+    <img class="lightbox-img" id="lightbox-img" alt="">
+    <span class="prev" onclick="event.stopPropagation(); showPrev()">❮</span>
+    <span class="next" onclick="event.stopPropagation(); showNext()">❯</span>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,308 @@
+body {
+  font-family: Arial;
+  text-align: center;
+  margin: 0;
+  background-color: #f2f2f2;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+}
+
+.gallery img {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  filter: brightness(1.1);
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.lightbox-img:hover {
+  transform: scale(1.02);
+}
+
+.close, .prev, .next {
+  position: absolute;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+  padding: 10px;
+  user-select: none;
+}
+
+.close {
+  top: 20px;
+  right: 30px;
+}
+
+.prev {
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+}
+
+.next {
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+}
+
+.filters {
+  margin-top: 20px;
+}
+
+.filters button {
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.filters button:hover {
+  background-color: #666;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 80%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Modern gallery card style */
+.gallery img {
+  width: 280px;
+  height: auto;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+  filter: brightness(1.1);
+}
+
+/* Lightbox popup style with blur effect */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Lightbox image improved */
+.lightbox-img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+.lightbox-img:hover {
+  transform: scale(1.02);
+}
+
+/* Buttons style */
+.close, .prev, .next {
+  position: absolute;
+  color: #fff;
+  font-size: 40px;
+  cursor: pointer;
+  padding: 12px;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.close:hover,
+.prev:hover,
+.next:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.close {
+  top: 25px;
+  right: 30px;
+}
+
+.prev {
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+}
+
+.next {
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+}
+
+/* Filters bar */
+.filters {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.filters button {
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  margin: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.filters button:hover {
+  background-color: #666;
+  transform: scale(1.05);
+}
+
+.filters button.active {
+  background-color: #00aaff;
+}
+
+/* DARK/LIGHT TOGGLE STYLING */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.theme-label {
+  font-weight: bold;
+  color: #333;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 24px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.slider::before {
+  content: "";
+  height: 18px;
+  width: 18px;
+  position: absolute;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider::before {
+  transform: translateX(26px);
+}
+
+/* DARK THEME CLASS */
+body.dark {
+  background-color: #121212;
+  color: white;
+}
+
+body.dark .theme-label {
+  color: white;
+}
+
+body.dark .gallery img:hover {
+  filter: brightness(1.2);
+}
+
+body.dark .filters button {
+  background-color: #333;
+  color: white;
+}
+
+body.dark .filters button:hover {
+  background-color: #555;
+}
+
+body.dark .download {
+  background-color: #444;
+  color: white;
+}
+
+body.dark .download:hover {
+  background-color: #666;
+}
